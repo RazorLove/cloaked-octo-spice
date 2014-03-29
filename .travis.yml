@@ -1,4 +1,4 @@
 language: cpp
 before_install: sudo add-apt-repository ppa:bitcoin/bitcoin && sudo apt-get update
-install: sudo apt-get install libtool autotools-dev autoconf libssl-dev libboost-all-dev libqrencode-dev libqt5gui5 libqt5core5 libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev libdb4.8-dev libdb4.8++-dev libboost1.55-all-dev -y
+install: sudo apt-get install build-essential pkg-config libtool autotools-dev autoconf libssl-dev db4.8 libboost1.53-all-dev pkg-config libqt5gui5 libqt5core5 libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev libqrencode-dev -y
 script: ./autogen.sh && ./configure && make
