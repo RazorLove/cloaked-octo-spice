@@ -1,4 +1,4 @@
 language: cpp
-before_install: sudo apt-get update
-install: sudo apt-get install git build-essential libssl-dev libboost-all-dev libdb++-dev libminiupnpc-dev qt-sdk -y
-script: cd src && make -f makefile.unix USE_UPNP=0 && cd .. && qmake "USE_UPNP=0" && make
+before_install: sudo add-apt-repository ppa:bitcoin/bitcoin && sudo apt-get update
+install: sudo apt-get install libtool autotools-dev autoconf libssl-dev libboost-all-dev libqrencode-dev libqt5gui5 libqt5core5 libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev libdb4.8-dev libdb4.8++-dev libboost1.55-all-dev -y
+script: ./autogen.sh && ./configure && make
